@@ -17,6 +17,8 @@ Abstract:
 
 #include "Misc.tmh"
 
+#define UDECXMBIM_POOL_TAG 'UDEI'
+
 
 static VOID
 _WQQCancelRequest(
@@ -147,7 +149,7 @@ WRQueuePushWrite(
         status = STATUS_SUCCESS; // til proven otherwise
 
         // allocate
-        pNewEntry = ExAllocatePool(PagedPool, sizeof(BUFFER_CONTENT) + wlen);
+        pNewEntry = ExAllocatePool2(PagedPool, sizeof(BUFFER_CONTENT) + wlen, UDECXMBIM_POOL_TAG);
         if (pNewEntry == NULL) {
             TraceEvents(TRACE_LEVEL_ERROR,
                 TRACE_QUEUE,

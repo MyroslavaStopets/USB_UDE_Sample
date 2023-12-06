@@ -277,7 +277,7 @@ Usb_ReadDescriptorsAndPlugIn(
     // Compute configuration descriptor dynamically.
     //
     pComputedConfigDescSet = (PUSB_CONFIGURATION_DESCRIPTOR)
-        ExAllocatePoolWithTag(NonPagedPoolNx, sizeof(g_UsbConfigDescriptorSet), UDECXMBIM_POOL_TAG);
+        ExAllocatePool2(NonPagedPoolNx, sizeof(g_UsbConfigDescriptorSet), UDECXMBIM_POOL_TAG);
 
     if (pComputedConfigDescSet == NULL) {
 
