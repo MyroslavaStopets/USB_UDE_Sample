@@ -15,8 +15,8 @@ UDEFX2.sys defines these endpoints:
 * <B>an INTERRUPT/IN endpoint</B>:  Upon request from a back-channel controller test app (via a back-channel IOCTL), generates an interrupt from the virtual device. Interrupt also generates Remote Wakeup if the virtual device is in low-power mode.
 
 To build the drivers, you need:
-* Visual Studio 2017
-* The WDK, along with the WDK extension for Visual Studio
+* Visual Studio 2022
+* The latest SDK and WDK version as of December 6, 2023 (https://learn.microsoft.com/uk-ua/windows-hardware/drivers/download-the-wdk), along with the WDK extension for Visual Studio
 
 To install the drivers, have all the sys/inf/cat files that result from the build on a single directory, and run this command from an Administrator DOS prompt:
 * <B>installem.bat</B>
